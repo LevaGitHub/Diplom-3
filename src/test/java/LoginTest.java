@@ -53,7 +53,7 @@ public class LoginTest extends GuiTestBase {
     @Test
     @DisplayName("Login by button in Main Window")
     @Description("Проверка возможности логина через кнопку на главной странице")
-    public void loginButtonMainWindow() {
+    public void loginButtonMainWindowSuccess() {
         driver.get(BASE_URI);
         MainPage objMainPage = new MainPage(driver);
         objMainPage.clickBtnLogin();
@@ -64,10 +64,10 @@ public class LoginTest extends GuiTestBase {
     @Test
     @DisplayName("Login by button 'Personal Area' in Main Window")
     @Description("Проверка возможности логина через кнопку 'Личный кабинет' на главной странице")
-    public void loginPersonAreaMainWindow() {
+    public void loginPersonAreaMainWindowSuccess() {
         driver.get(BASE_URI);
         MainPage objMainPage = new MainPage(driver);
-        objMainPage.clickBtnPersonalArea();
+        objMainPage.clickBtnPersonalAccount();
         loginToLoginPage();
         assertTrue(objMainPage.checkEnabledBtnLogin());
     }
@@ -75,7 +75,7 @@ public class LoginTest extends GuiTestBase {
     @Test
     @DisplayName("Login by button Login by form Register")
     @Description("Проверка возможности логина через кнопку 'Войти' на странице регистрации")
-    public void loginButtonByFormRegister() {
+    public void loginButtonByFormRegisterSuccess() {
         driver.get(BASE_URI + REGISTER_METHOD_PATH);
         RegisterPage objRegisterPage = new RegisterPage(driver);
         objRegisterPage.clickBtnLogin();
@@ -87,7 +87,7 @@ public class LoginTest extends GuiTestBase {
     @Test
     @DisplayName("Login by button Login by form Forgot Password")
     @Description("Проверка возможности логина через кнопку 'Войти' на странице восстановления пароля")
-    public void loginButtonByFormForgotPassword() {
+    public void loginButtonByFormForgotPasswordSuccess() {
         driver.get(BASE_URI + FORGOT_PASSWORD_METHOD_PATH);
         ForgotPasswordPage objForgotPasswordPage = new ForgotPasswordPage(driver);
         objForgotPasswordPage.clickBtnLogin();

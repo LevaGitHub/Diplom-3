@@ -13,7 +13,8 @@ public class MainPage {
     // Кнопка Оформить заказ
     private final By btnCreateOrder = By.xpath("//button[text()='Оформить заказ']");
     // Кнопка Личный кабинет
-    private final By btnPersonArea = By.xpath("//p[text()='Личный Кабинет']");
+    private final By btnPersonAccount = By.xpath("//p[text()='Личный Кабинет']");
+    // Контейнер с ингредиентами
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -23,8 +24,8 @@ public class MainPage {
         driver.findElement(btnLogin).click();
     }
 
-    public void clickBtnPersonalArea() {
-        driver.findElement(btnPersonArea).click();
+    public void clickBtnPersonalAccount() {
+        driver.findElement(btnPersonAccount).click();
     }
 
     public boolean checkEnabledBtnLogin(){
