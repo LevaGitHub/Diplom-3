@@ -18,7 +18,10 @@ public class RegisterPage {
     private final By btnRegister = By.xpath("//button[text()='Зарегистрироваться']");
     // Надпись Некорректный пароль
     private final By lblIncorrectPassword = By.xpath("//p[text()='Некорректный пароль']");
-    //p[text()='Некорректный пароль']
+    // Кликабельный текст Войти
+    private final By btnLogin = By.xpath("//a[text()='Войти']");
+
+
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -41,6 +44,10 @@ public class RegisterPage {
 
     public boolean checkEnabledLblIncorrectPassword(){
         return driver.findElement(lblIncorrectPassword).isDisplayed();
+    }
+
+    public void clickBtnLogin() {
+        driver.findElement(btnLogin).click();
     }
 
 }
