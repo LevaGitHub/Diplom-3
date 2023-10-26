@@ -15,6 +15,9 @@ public class MainPage {
     // Кнопка Личный кабинет
     private final By btnPersonAccount = By.xpath("//p[text()='Личный Кабинет']");
     // Контейнер с ингредиентами
+    private final By cntBurgerIngredients = By.xpath("//div[contains(@class, " +
+            "'BurgerIngredients_ingredients__menuContainer')]");
+
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -31,4 +34,9 @@ public class MainPage {
     public boolean checkEnabledBtnLogin(){
         return driver.findElement(btnCreateOrder).isDisplayed();
     }
+    public boolean checkDisplayedMenuIngredients(){
+        return driver.findElement(cntBurgerIngredients).isDisplayed();
+    }
+
+
 }
