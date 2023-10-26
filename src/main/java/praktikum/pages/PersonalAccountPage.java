@@ -14,6 +14,9 @@ public class PersonalAccountPage {
     private final By btnConstructor = By.xpath("//p[text()='Конструктор']");
     // Объект Логотип
     private final By imgLogo = By.xpath("//div[contains(@class, 'AppHeader_header__logo')]");
+    // Кликабельная надпись Выход
+    private final By btnLogout = By.xpath("//button[text()='Выход']");
+
 
     public PersonalAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -30,5 +33,10 @@ public class PersonalAccountPage {
     public void clickImgLogo() {
         driver.findElement(imgLogo).click();
     }
-    
+
+    public void clickBtnLogout() {
+        driver.findElement(btnLogout).click();
+    }
+
+
 }
