@@ -9,7 +9,9 @@ public class Constants {
     public static final String FORGOT_PASSWORD_METHOD_PATH = "/forgot-password";
     public static final String API_LOGIN_METHOD_PATH = "/auth/login";
 
-
     public static final String API_PREFIX = "/api";
 
+    public static final String BUN = "BUN";
+    public static final String SAUCE = "SAUCE";
+    public static final String MAIN = "MAIN";
 }
