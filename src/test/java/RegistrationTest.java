@@ -47,6 +47,8 @@ public class RegistrationTest extends GuiTestBase {
     }
 
     @Test
+    @DisplayName("Registering a user")
+    @Description("Регистрация пользователя с валидными данными")
     public void registrationSuccess() {
         objRegisterPage.setInpName(userData.getName());
         objRegisterPage.setInpEmail(userData.getEmail());
@@ -61,6 +63,8 @@ public class RegistrationTest extends GuiTestBase {
     }
 
     @Test
+    @DisplayName("Registering a user with an incorrect password")
+    @Description("Регистрация пользователя с невалидным значением в поле Пароль")
     public void registerIncorrectPasswordFail() {
         objRegisterPage.setInpName(userData.getName());
         objRegisterPage.setInpEmail(userData.getEmail());

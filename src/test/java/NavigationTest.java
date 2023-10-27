@@ -38,7 +38,6 @@ public class NavigationTest extends GuiTestBase {
         objLoginPage.setInpPassword(userData.getPassword());
         objLoginPage.clickBtnLogin();
         objMainPage = new MainPage(driver);
-        objMainPage.clickBtnPersonalAccount();
     }
 
     @After

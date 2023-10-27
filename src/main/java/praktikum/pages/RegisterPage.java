@@ -1,11 +1,13 @@
 package praktikum.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage {
 
     private WebDriver driver;
+    private final String registerPageName = "Форма регистрации. ";
 
     // Страница регистрации
     // Поле ввода Имя
@@ -26,26 +28,32 @@ public class RegisterPage {
         this.driver = driver;
     }
 
+    @Step(registerPageName + "Заполнение поля Имя")
     public void setInpName(String name) {
         driver.findElement(inpName).sendKeys(name);
     }
 
+    @Step(registerPageName + "Заполнение поля Email")
     public void setInpEmail(String email) {
         driver.findElement(inpEmail).sendKeys(email);
     }
 
+    @Step(registerPageName + "Заполнение поля Пароль")
     public void setInpPassword(String password) {
         driver.findElement(inpPassword).sendKeys(password);
     }
 
+    @Step(registerPageName + "Клик на кнопку Регистрация")
     public void clickBtnRegister() {
         driver.findElement(btnRegister).click();
     }
 
+    @Step(registerPageName + "Проверка отображения надписи Некорректный пароль")
     public boolean checkEnabledLblIncorrectPassword(){
         return driver.findElement(lblIncorrectPassword).isDisplayed();
     }
 
+    @Step(registerPageName + "Клик на кнопку Войти")
     public void clickBtnLogin() {
         driver.findElement(btnLogin).click();
     }

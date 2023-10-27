@@ -1,5 +1,6 @@
 package praktikum.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ import java.time.Duration;
 public class MainPage {
 
     private WebDriver driver;
-
+    private final String mainPageName = "Главная страница. ";
     // Главная страница
     // Кнопка Войти а аккаунт
     private final By btnLogin = By.xpath("//button[text()='Войти в аккаунт']");
@@ -40,29 +41,37 @@ public class MainPage {
         this.driver = driver;
     }
 
+    @Step(mainPageName + "Клик на кнопку Войти в аккаунт")
     public void clickBtnLogin() {
         driver.findElement(btnLogin).click();
     }
 
+    @Step(mainPageName + "Клик на кнопку Личный кабинет")
     public void clickBtnPersonalAccount() {
         driver.findElement(btnPersonAccount).click();
     }
 
+    @Step(mainPageName + "Проверка отображения кнопки Создать заказ")
     public boolean checkEnabledBtnLogin(){
         return driver.findElement(btnCreateOrder).isDisplayed();
     }
+
+    @Step(mainPageName + "Проверка отображения области с ингредиентами")
     public boolean checkDisplayedMenuIngredients(){
         return driver.findElement(cntBurgerIngredients).isDisplayed();
     }
 
+    @Step(mainPageName + "Клик на вкладку Булки")
     public void clickTabBun() {
         driver.findElement(tabBun).click();
     }
 
+    @Step(mainPageName + "Клик на вкладку Соусы")
     public void clickTabSauce() {
         driver.findElement(tabSauce).click();
     }
 
+    @Step(mainPageName + "Клик на вкладку Начинки")
     public void clickTabMain() {
         driver.findElement(tabMain).click();
     }
@@ -79,6 +88,7 @@ public class MainPage {
         }
     }
 
+    @Step(mainPageName + "Проверка выбора вкладки в качестве активной")
     public boolean checkToCurrentTab(By tabName) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(10))
@@ -103,6 +113,7 @@ public class MainPage {
         return imgFluorescentBun;
     }
 
+    @Step(mainPageName + "Проверка прокрутки списка ингредиентов")
     public boolean checkScrollingToFirstPositions(By ingredient) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(10))
