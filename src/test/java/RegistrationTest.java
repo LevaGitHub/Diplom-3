@@ -40,6 +40,8 @@ public class RegistrationTest extends GuiTestBase {
     @DisplayName("Delete User")
     @Description("Удаление созданных тестовых данных")
     public void deleteTestData() {
+        ValidatableResponse loginUserResponse = userHelper.login(userData);
+        userData = userHelper.extractTokenFromResponse(userData, loginUserResponse);
         if (!Objects.isNull(userData.getAccessToken())) {
             System.out.println(userData.getAccessToken());
             userHelper.delete(userData.getAccessToken());
@@ -57,9 +59,6 @@ public class RegistrationTest extends GuiTestBase {
         LoginPage objLoginPage = new LoginPage(driver);
         assertTrue(objLoginPage.checkEnabledLoginLabel());
         assertTrue(objLoginPage.checkEnabledLoginButton());
-
-        ValidatableResponse loginUserResponse = userHelper.login(userData);
-        userData = userHelper.extractTokenFromResponse(userData, loginUserResponse);
     }
 
     @Test

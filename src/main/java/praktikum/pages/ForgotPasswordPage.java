@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class ForgotPasswordPage {
 
     private WebDriver driver;
-    private final String forgotPasswordPageName = "Форма восстановления пароля. ";
+    private static final String FORGOT_PASSWORD_PAGE_NAME = "Форма восстановления пароля. ";
 
     // Страница восстановления пароля
     // Кликабельная надпись Войти
@@ -17,7 +17,7 @@ public class ForgotPasswordPage {
         this.driver = driver;
     }
 
-    @Step(forgotPasswordPageName + "Клик на кнопку Войти")
+    @Step(FORGOT_PASSWORD_PAGE_NAME + "Клик на кнопку Войти")
     public void clickBtnLogin() {
         driver.findElement(btnLogin).click();
     }

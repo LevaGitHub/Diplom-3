@@ -7,45 +7,45 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
 
     private WebDriver driver;
-    private final String loginPageName = "Форма авторизации. ";
+    private static final String LOGIN_PAGE_NAME = "Форма авторизации. ";
 
     // Страница логина
     // Надпись Вход
-    private final By lblLogin = By.xpath("//div[contains(@class,'Auth_login')]/h2");
+    private final static By LBL_LOGIN = By.xpath("//div[contains(@class,'Auth_login')]/h2");
     // Кнопка Войти
-    private final By btnLogin = By.xpath("//button[text()='Войти']");
+    private final static By BTN_LOGIN = By.xpath("//button[text()='Войти']");
     // Поле ввода Email
-    private final By inpEmail = By.xpath("//label[text()='Email']/../input");
+    private final static By INP_EMAIL = By.xpath("//label[text()='Email']/../input");
     // Поле ввода Пароль
-    private final By inpPassword = By.xpath("//label[text()='Пароль']/../input");
+    private final static By INP_PASSWORD = By.xpath("//label[text()='Пароль']/../input");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    @Step(loginPageName + "Проверка доступности надписи Вход")
+    @Step(LOGIN_PAGE_NAME + "Проверка доступности надписи Вход")
     public boolean checkEnabledLoginLabel(){
-        return driver.findElement(lblLogin).isEnabled();
+        return driver.findElement(LBL_LOGIN).isEnabled();
     }
 
-    @Step(loginPageName + "Проверка доступности кнопки Войти")
+    @Step(LOGIN_PAGE_NAME + "Проверка доступности кнопки Войти")
     public boolean checkEnabledLoginButton(){
-        return driver.findElement(btnLogin).isDisplayed();
+        return driver.findElement(BTN_LOGIN).isDisplayed();
     }
 
-    @Step(loginPageName + "Заполнение поля Email")
+    @Step(LOGIN_PAGE_NAME + "Заполнение поля Email")
     public void setInpEmail(String email) {
-        driver.findElement(inpEmail).sendKeys(email);
+        driver.findElement(INP_EMAIL).sendKeys(email);
     }
 
-    @Step(loginPageName + "Заполнение поля Пароль")
+    @Step(LOGIN_PAGE_NAME + "Заполнение поля Пароль")
     public void setInpPassword(String password) {
-        driver.findElement(inpPassword).sendKeys(password);
+        driver.findElement(INP_PASSWORD).sendKeys(password);
     }
 
-    @Step(loginPageName + "Клик на кнопку Войти")
+    @Step(LOGIN_PAGE_NAME + "Клик на кнопку Войти")
     public void clickBtnLogin() {
-        driver.findElement(btnLogin).click();
+        driver.findElement(BTN_LOGIN).click();
     }
 
 }
